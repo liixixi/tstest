@@ -1,0 +1,24 @@
+{
+  "name": "tstest",
+  "version": "1.0.0",
+  "description": "Ok, this time I need study typescript, I will create a front-end message notification system.",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^4.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "tsc && node dist/index.js",
+    "test": "tsc && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liixixi/tstest.git"
+  },
+  "author": "Simon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liixixi/tstest/issues"
+  },
+  "homepage": "https://github.com/liixixi/tstest#readme"
+}
