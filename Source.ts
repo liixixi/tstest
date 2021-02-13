@@ -1,3 +1,4 @@
+import { Subscription } from "rxjs";
 
 export class ISource
 {
@@ -7,4 +8,5 @@ export class ISource
 export class ISourceRead extends ISource
 {
     public OnSourceDataChanged?(v : any) : void;
+    public subscritpion? : Subscription;
 }

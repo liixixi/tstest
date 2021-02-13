@@ -4,6 +4,7 @@
   "description": "Ok, this time I need study typescript, I will create a front-end message notification system.",
   "dependencies": {
     "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.6.3",
     "typescript": "^4.1.5"
   },
   "devDependencies": {},

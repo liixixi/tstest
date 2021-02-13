@@ -2,6 +2,7 @@
 import "reflect-metadata";
 import {  } from "typescript";
 import { ISource, ISourceRead } from "./Source";
+import { tagSystem } from "./TagSystem";
 
 
 
@@ -54,4 +55,33 @@ export function ModifySource(obj: PVObject, attributeName:string, sourceName:str
     source.ReourceName = sourceName;
 
     return true;
+}
+
+export function startAnimation(obj :PVObject) : any
+{
+    obj.sources.forEach( source =>
+    {
+        let readSource =  source as ISourceRead;
+        if (readSource.ReourceName)
+        {
+            var tag = tagSystem.GetTag(readSource.ReourceName);
+            readSource.subscritpion = tag?.onValueChanged.subscribe( (v : any) => {
+                if (readSource.OnSourceDataChanged)
+                    readSource.OnSourceDataChanged(v);
+            });
+        }
+    });
+}
+
+export function stopAnimation(obj :PVObject) : any
+{
+    obj.sources.forEach( source =>
+    {
+        let readSource =  source as ISourceRead;
+        if (readSource.ReourceName)
+        {
+            if (readSource.subscritpion)
+                readSource.subscritpion.unsubscribe();
+        }
+    });
 }
